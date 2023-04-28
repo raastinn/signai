@@ -2,7 +2,7 @@ import React from 'react'
 import Form from './form'
 import Results from './results'
 import type { NextPage } from "next"
-// import logo from "../public/signaiLogo.svg"
+import logo from "../public/logo.svg"
 
 const Signai: React.FC = () => {
     const URL: string = "https://nxhxljeglj.execute-api.us-east-1.amazonaws.com/prod/generate_branding_and_keywords"
@@ -15,6 +15,7 @@ const Signai: React.FC = () => {
 
     const onSubmit = () => {
         console.log("Submitting: " + prompt)
+        console.log(branding)
         setIsLoading(true)
         fetch(`${URL}?prompt=${prompt}`).then((res) => res.json()).then(onResult)
     }
@@ -62,9 +63,9 @@ const Signai: React.FC = () => {
             <div className="h-screen flex">
                 <div className="max-w-md m-auto p-2">
                     <div className="bg-gray-800 p-8 rounded-md text-white shadow-xl">
-                        <div className="text-center my-6">
-                            {/* <image src={logo} width={60} height={60}/> */}
-                            <h1 className={gradientTextStyle + " text-3xl"}>signai</h1>
+                        <div className="text-center m-10">
+                            <img className="mx-auto" src="https://i.ibb.co/VHm1MT1/logo.png" width={200} />
+                            {/* <h1 className={gradientTextStyle + " text-3xl"}>signai</h1> */}
                             <div className={gradientTextStyle}>Your AI Branding Assistant</div>
                             {/* <div className={gradientTextStyle}>hi</div> */}
                         </div>
