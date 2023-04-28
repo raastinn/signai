@@ -23,7 +23,7 @@ def generate_branding(prompt: str):
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
     # Prompt that gets entered as question for OpenAI
-    gpt_prompt = f"Generate upbeat branding snippet for {prompt} in 32 words or less: "
+    gpt_prompt = f"Generate upbeat branding snippet for {prompt} in 30 words or less: "
     print(gpt_prompt)
 
     # Retrieving response

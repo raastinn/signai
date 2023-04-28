@@ -1,7 +1,7 @@
 interface ResultsProps {
     prompt: string
     branding: string
-    keywords: string[]
+    keywords: string |string[]
     onBack: any
 }
 
