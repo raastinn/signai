@@ -15,7 +15,7 @@
   </p>
 </p>
 
-[![Site preview](preview.png)](https://signai.vercel.com)
+[![Site preview](preview.png)](https://signai.vercel.app)
 
 ## Table of Contents
 
