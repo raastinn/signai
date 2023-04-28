@@ -1,14 +1,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://signai.vercel.com">
+  <a href="https://signai.vercel.app">
     <img src="https://i.ibb.co/VHm1MT1/logo.png" alt="Logo" width="200">
   </a>
   <h1 align="center">Your AI Branding Assistant</h1>
 
   <p align="center">
     An AI branding assistant to help you with your brand's marketing. Check it out at:
-    <a href="https://signai.vercel.com">signai.vercel.com</a>
+    <a href="https://signai.vercel.app">signai.vercel.app</a>
     <br />
     <br />
     <a href="https://rastin.dev">About Me</a>
