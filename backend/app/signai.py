@@ -49,7 +49,7 @@ def generate_keywords(prompt: str) -> list[str]:
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
     # Prompt that gets entered as question for OpenAI
-    gpt_prompt = f"Generate related branding keywords for {prompt}: "
+    gpt_prompt = f"Generate related branding keywords for {prompt} (only keywords seperated by commas): "
     print(gpt_prompt)
 
     # Retrieving response
