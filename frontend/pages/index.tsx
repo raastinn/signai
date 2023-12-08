@@ -1,10 +1,5 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import Head from "next/head"
-// import styles from "../styles/Home.module.css"
-import Signai from "../components/signai"
-import type { NextPage } from "next"
-// import logo from "../public/signaiLogo.svg"
+import Head from "next/head";
+import Signai from "../components/signai";
 
 export default function Home() {
   return (
@@ -19,5 +14,5 @@ export default function Home() {
       </Head>
       <Signai />
     </div>
-  )
+  );
 }
