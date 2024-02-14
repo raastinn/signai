@@ -1,5 +1,5 @@
 import os
-import openai
+from openai import OpenAI
 import argparse
 import re
 
@@ -20,19 +20,32 @@ def main():
 
 def generate_branding(prompt: str):
     # Load your API key from an environment variable or secret management service
-    openai.api_key = os.getenv("OPENAI_API_KEY")
+    client = OpenAI(
+        # This is the default and can be omitted
+        api_key=os.environ.get("OPENAI_API_KEY"),
+    )
 
     # Prompt that gets entered as question for OpenAI
     gpt_prompt = f"Generate upbeat branding snippet for {prompt} in 30 words or less: "
     print(gpt_prompt)
 
     # Retrieving response
-    response = openai.Completion.create(
-        engine="davinci-instruct-beta-v3", prompt=gpt_prompt, max_tokens=32
+    response = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": gpt_prompt,
+            }
+        ],
+        model="gpt-3.5-turbo",
+        max_tokens=32,
     )
 
     # Retreiving answer from OpenAI 
-    branding_output = response["choices"][0]["text"]
+    branding_output = response.choices[0].message.content
+
+    # Remove quotation marks
+    branding_output = branding_output.replace('"', '')
 
     # Strip whitespace
     branding_output = branding_output.strip()
@@ -46,19 +59,29 @@ def generate_branding(prompt: str):
 
 def generate_keywords(prompt: str) -> list[str]:
     # Load your API key from an environment variable or secret management service
-    openai.api_key = os.getenv("OPENAI_API_KEY")
+    client = OpenAI(
+        # This is the default and can be omitted
+        api_key=os.environ.get("OPENAI_API_KEY"),
+    )
 
     # Prompt that gets entered as question for OpenAI
     gpt_prompt = f"Generate related branding keywords for {prompt} (only keywords seperated by commas): "
     print(gpt_prompt)
 
     # Retrieving response
-    response = openai.Completion.create(
-        engine="davinci-instruct-beta-v3", prompt=gpt_prompt, max_tokens=32
+    response = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": gpt_prompt,
+            }
+        ],
+        model="gpt-3.5-turbo",
+        max_tokens=32,
     )
 
     # Retreiving answer from OpenAI 
-    keywords_output = response["choices"][0]["text"]
+    keywords_output = response.choices[0].message.content
 
     # Strip whitespace
     keywords_output = keywords_output.strip()
