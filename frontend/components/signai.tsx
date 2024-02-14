@@ -6,8 +6,8 @@ import { useState } from "react";
 const CHAR_LIMIT: number = 32;
 
 export default function Signai() {
-  const URL: string =
-    "https://nxhxljeglj.execute-api.us-east-1.amazonaws.com/prod/generate_branding_and_keywords";
+  const brandingURL: string = "https://atcfwkecfi.execute-api.us-east-1.amazonaws.com/prod/generate_branding";
+  const keywordsURL: string = "https://atcfwkecfi.execute-api.us-east-1.amazonaws.com/prod/generate_keywords"
   const [prompt, setPrompt] = useState("");
   const [branding, setBranding] = useState("");
   const [keywords, setKeywords] = useState("");
@@ -18,14 +18,25 @@ export default function Signai() {
     console.log("Submitting: " + prompt);
     console.log(branding);
     setIsLoading(true);
-    fetch(`${URL}?prompt=${prompt}`)
-      .then((res) => res.json())
-      .then(onResult);
+
+    const brandingPromise = fetch(`${brandingURL}?prompt=${prompt}`).then((res) => res.json());
+    const keywordsPromise = fetch(`${keywordsURL}?prompt=${prompt}`).then((res) => res.json());
+
+    // Use Promise.all to wait for both promises to resolve
+    Promise.all([brandingPromise, keywordsPromise])
+    .then(([brandingData, keywordsData]) => {
+
+      // Call onResult function with the data
+      onResult(brandingData, keywordsData);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
   }
 
-  function onResult(data: any) {
-    setBranding(data.branding);
-    setKeywords(data.keywords);
+  function onResult(brandingData: any, keywordsData: any) {
+    setBranding(brandingData.branding);
+    setKeywords(keywordsData.keywords);
     setHasResult(true);
     setIsLoading(false);
   }
