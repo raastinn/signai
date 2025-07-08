@@ -7,3 +7,9 @@ node_modules
 .cdk.staging
 cdk.out
 .env
+
+.idea
+
+bin
+cdk.out
+python

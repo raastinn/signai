@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 from openai import OpenAI
 import argparse
 import re
@@ -19,6 +20,8 @@ def main():
         raise ValueError(f"Input length is too long. Must be under {MAX_INPUT_LENGTH}. Submitted input is {user_input}")
 
 def generate_branding(prompt: str):
+    load_dotenv(dotenv_path="../signai-infra/.env")
+
     # Load your API key from an environment variable or secret management service
     client = OpenAI(
         # This is the default and can be omitted
@@ -37,7 +40,7 @@ def generate_branding(prompt: str):
                 "content": gpt_prompt,
             }
         ],
-        model="gpt-3.5-turbo",
+        model="gpt-4.1-nano",
         max_tokens=32,
     )
 
@@ -76,7 +79,7 @@ def generate_keywords(prompt: str) -> list[str]:
                 "content": gpt_prompt,
             }
         ],
-        model="gpt-3.5-turbo",
+        model="gpt-4.1-nano",
         max_tokens=32,
     )
 

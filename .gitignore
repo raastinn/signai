@@ -1,2 +1,6 @@
 *.pyc
 *.zip
+
+.idea
+
+___pychache___

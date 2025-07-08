@@ -39,4 +39,6 @@ def validate_input_length(prompt: str):
         raise HTTPException(status_code=400, detail=f"Input length is too long. Must be under {MAX_INPUT_LENGTH} characters.")
     pass
 
+# RUN:
 # uvicorn signai_api:app --reload
+# To check the fast api response
