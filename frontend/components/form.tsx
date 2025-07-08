@@ -19,20 +19,28 @@ export default function Form(props: FormProps) {
   let statusText = null;
 
   if (!checkPrompt) {
-    statusColor = "text-red-400";
+    statusColor = "text-red-500";
     statusText = `Input must be less than ${props.charLimit} characters.`;
   }
 
   return (
-    <>
-      <div className="mb-6 mx-4 text-slate-300 text-base font-light">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (!props.isLoading && checkPrompt) {
+          props.onSubmit();
+        }
+      }}
+    >
+      <div className="mb-6 mx-4 text-slate-50 text-base font-light">
         <p>
           Tell me your brand and I will generate branding and keywords for you.
         </p>
       </div>
       <input
-        className="p-2 w-full rounded-md focus:outline-teal-400 focus:outline text-slate-700"
+        className="p-2 w-full rounded-md focus:outline-teal-500 focus:outline text-slate-700"
         type="text"
+        required={true}
         placeholder="fitness"
         value={props.prompt}
         onChange={(f) => updatePromptValue(f.currentTarget.value)}
@@ -44,13 +52,12 @@ export default function Form(props: FormProps) {
         </div>
       </div>
       <button
-        className="bg-gradient-to-r from-teal-400 to-blue-500 
-            disabled:opacity-50 w-full p-2 rounded-md text-lg"
-        onClick={props.onSubmit}
+        className="bg-gradient-to-r from-indigo-200 via-indigo-300 to-sky-300 hover:opacity-70
+            transition-all duration-300 disabled:opacity-50 w-full p-2 rounded-md text-lg"
         disabled={props.isLoading || !checkPrompt}
       >
         Submit
       </button>
-    </>
+    </form>
   );
 }

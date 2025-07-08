@@ -65,13 +65,13 @@ export default function Signai() {
   );
 
   const gradientTextStyle =
-    "text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 font-light w-fit mx-auto";
+    "text-transparent bg-clip-text bg-gradient-to-r from-violet-200 via-indigo-50 to-indigo-100 font-light w-fit mx-auto";
 
   return (
     <>
       <div className="h-screen flex">
         <div className="max-w-md m-auto p-2">
-          <div className="bg-gray-800 p-8 rounded-md text-white shadow-xl">
+          <div className="bg-gray-700/50 backdrop-blur-lg p-8 rounded-md text-white shadow-xl">
             <div className="text-center m-10">
               <img className="mx-auto" src="https://i.imgur.com/4OTXe9I.png" width={200} />
               <div className={gradientTextStyle}>

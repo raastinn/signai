@@ -44,7 +44,7 @@ export default function Results(props: ResultsProps) {
         {resultsSection("Keywords", keywordsHolder)}
       </div>
       <button
-        className="bg-gradient-to-r from-teal-400 to-blue-500 
+        className="bg-gradient-to-r from-indigo-200 via-indigo-300 to-sky-300
                 disabled:opacity-50 w-full p-2 rounded-md text-lg"
         onClick={props.onBack}
       >
