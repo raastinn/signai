@@ -2,6 +2,7 @@ import React from "react";
 import Form from "./form";
 import Results from "./results";
 import { useState } from "react";
+import Logo from "@/public/logo";
 
 const CHAR_LIMIT: number = 32;
 
@@ -65,7 +66,7 @@ export default function Signai() {
   );
 
   const gradientTextStyle =
-    "text-transparent bg-clip-text bg-gradient-to-r from-violet-200 via-indigo-50 to-indigo-100 font-light w-fit mx-auto";
+    "text-transparent bg-clip-text bg-gradient-to-r from-teal-100 to-indigo-200 font-light w-fit mx-auto";
 
   return (
     <>
@@ -73,7 +74,10 @@ export default function Signai() {
         <div className="max-w-md m-auto p-2">
           <div className="bg-gray-700/50 backdrop-blur-lg p-8 rounded-md text-white shadow-xl">
             <div className="text-center m-10">
-              <img className="mx-auto" src="https://i.imgur.com/4OTXe9I.png" width={200} />
+              <div className="flex justify-center items-center gap-1 mb-2">
+                <Logo />
+                <p className='font-bold text-4xl -mt-2'>signai</p>
+              </div>
               <div className={gradientTextStyle}>
                 Your AI Branding Assistant
               </div>

@@ -52,8 +52,8 @@ export default function Form(props: FormProps) {
         </div>
       </div>
       <button
-        className="bg-gradient-to-r from-indigo-200 via-indigo-300 to-sky-300 hover:opacity-70
-            transition-all duration-300 disabled:opacity-50 w-full p-2 rounded-md text-lg"
+        className="bg-gradient-to-r from-teal-200 to-sky-400 hover:opacity-70
+            transition-all duration-300 disabled:opacity-50 w-full p-2 rounded-md text-lg text-shadow-lg"
         disabled={props.isLoading || !checkPrompt}
       >
         Submit
