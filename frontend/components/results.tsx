@@ -12,7 +12,7 @@ export default function Results(props: ResultsProps) {
     const element = (
       <div
         key={i}
-        className="bg-teal-200 p-1 text-teal-800 px-2 text-sm rounded-md"
+        className="bg-slate-800 p-1 text-gray-300 px-2 text-sm rounded-md"
       >
         #{props.keywords[i]}
       </div>
@@ -22,7 +22,7 @@ export default function Results(props: ResultsProps) {
 
   function resultsSection(label: string, body: any) {
     return (
-      <div className="bg-slate-700 p-4 my-3 rounded-md">
+      <div className="bg-slate-100 p-4 my-3 rounded-md">
         <div className="text-slate-500 text-sm font-bold bm-1">{label}</div>
         <div>{body}</div>
       </div>
@@ -44,7 +44,7 @@ export default function Results(props: ResultsProps) {
         {resultsSection("Keywords", keywordsHolder)}
       </div>
       <button
-        className="bg-gradient-to-r from-teal-200 to-sky-400
+        className="bg-lime
                 disabled:opacity-50 w-full p-2 rounded-md text-lg"
         onClick={props.onBack}
       >

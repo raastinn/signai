@@ -19,7 +19,7 @@ export default function Form(props: FormProps) {
   let statusText = null;
 
   if (!checkPrompt) {
-    statusColor = "text-red-500";
+    statusColor = "text-red-400";
     statusText = `Input must be less than ${props.charLimit} characters.`;
   }
 
@@ -32,13 +32,13 @@ export default function Form(props: FormProps) {
         }
       }}
     >
-      <div className="mb-6 mx-4 text-slate-50 text-base font-light">
+      <div className="mb-6 mx-4 text-gray-700 text-base font-light">
         <p>
           Tell me your brand and I will generate branding and keywords for you.
         </p>
       </div>
       <input
-        className="p-2 w-full rounded-md focus:outline-teal-500 focus:outline text-slate-700"
+        className="p-2 w-full rounded-md outline outline-gray-300 focus:outline-coral text-slate-700"
         type="text"
         required={true}
         placeholder="fitness"
@@ -52,7 +52,7 @@ export default function Form(props: FormProps) {
         </div>
       </div>
       <button
-        className="bg-gradient-to-r from-teal-200 to-sky-400 hover:opacity-70
+        className="bg-lime text-gray-700 font-light hover:opacity-80
             transition-all duration-300 disabled:opacity-50 w-full p-2 rounded-md text-lg text-shadow-lg"
         disabled={props.isLoading || !checkPrompt}
       >

@@ -66,15 +66,15 @@ export default function Signai() {
   );
 
   const gradientTextStyle =
-    "text-transparent bg-clip-text bg-gradient-to-r from-teal-100 to-indigo-200 font-light w-fit mx-auto";
+    "text-coral font-light w-fit mx-auto";
 
   return (
     <>
       <div className="h-screen flex">
         <div className="max-w-md m-auto p-2">
-          <div className="bg-gray-700/50 backdrop-blur-lg p-8 rounded-md text-white shadow-xl">
+          <div className="bg-white/70 backdrop-blur-lg p-8 rounded-xl text-gray-700 shadow-lg">
             <div className="text-center m-10">
-              <div className="flex justify-center items-center gap-1 mb-2">
+              <div className="flex justify-center items-center gap-1">
                 <Logo />
                 <p className='font-bold text-4xl -mt-2'>signai</p>
               </div>
