@@ -22,7 +22,7 @@ export default function Results(props: ResultsProps) {
 
   function resultsSection(label: string, body: any) {
     return (
-      <div className="bg-slate-100 p-4 my-3 rounded-md">
+      <div className="bg-neutral-800/10 p-4 my-3 rounded-md">
         <div className="text-slate-500 text-sm font-bold bm-1">{label}</div>
         <div>{body}</div>
       </div>
