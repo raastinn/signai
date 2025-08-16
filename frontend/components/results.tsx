@@ -22,8 +22,8 @@ export default function Results(props: ResultsProps) {
 
   function resultsSection(label: string, body: any) {
     return (
-      <div className="bg-neutral-800/10 p-4 my-3 rounded-md">
-        <div className="text-slate-500 text-sm font-bold bm-1">{label}</div>
+      <div className="bg-neutral-400/10 p-4 my-3 rounded-md">
+        <div className="text-slate-400 text-sm font-semibold bm-1">{label}</div>
         <div>{body}</div>
       </div>
     );
@@ -38,14 +38,14 @@ export default function Results(props: ResultsProps) {
       <div>
         {resultsSection(
           "Prompt",
-          <div className=" font-semibold">{props.prompt}</div>,
+          <div className="font-semibold">{props.prompt}</div>,
         )}
         {resultsSection("Branding", props.branding)}
         {resultsSection("Keywords", keywordsHolder)}
       </div>
       <button
         className="bg-lime
-                disabled:opacity-50 w-full p-2 rounded-md text-lg"
+                disabled:opacity-50 w-full p-2 rounded-md text-lg text-gray-700"
         onClick={props.onBack}
       >
         Back

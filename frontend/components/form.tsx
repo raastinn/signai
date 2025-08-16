@@ -32,7 +32,7 @@ export default function Form(props: FormProps) {
         }
       }}
     >
-      <div className="mb-6 mx-4 text-gray-700 text-base font-light">
+      <div className="mb-6 mx-4 text-gray-300 text-base font-light">
         <p>
           Tell me your brand and I will generate branding and keywords for you.
         </p>
